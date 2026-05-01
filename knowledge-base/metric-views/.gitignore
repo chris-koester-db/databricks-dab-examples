@@ -3,3 +3,5 @@
 .vscode/**
 typings/**
 src/__pycache__/
+scripts/
+.gitattributes

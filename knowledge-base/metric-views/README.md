@@ -2,9 +2,7 @@
 
 The DBSQL Metrics project demonstrates how to use [**Databricks Asset Bundles**](https://docs.databricks.com/aws/en/dev-tools/bundles/) with [**Unity Catalog Metric Views**](https://docs.databricks.com/aws/en/metric-views/) to create an end-to-end analytics solution on Databricks. This project deploys a simple dimensional model sourced from [System Tables](https://docs.databricks.com/aws/en/admin/system-tables/), Metric Views, and an AI/BI dashboard, all packaged neatly in a bundle.
 
-This project also shows how to parameterize AI/BI dashboard datasets with DABs, which is not natively supported. Follow [issue 1915](https://github.com/databricks/cli/issues/1915) for updates.
-
-![DBSQL Metrics job](assets/dbsql_metrics_job.jpg "DBSQL Metrics job")
+![DBSQL Metrics job](assets/dbsql_metrics_job.png "DBSQL Metrics job")
 
 ## Prerequisites
 
@@ -73,24 +71,7 @@ host = https://prod-workspace.cloud.databricks.com
 token = databricks-cli
 ```
 
-### 3. Set up Python Virtual Environment
-Create and activate a Python virtual environment to manage dependencies:
-
-```bash
-# Create virtual environment
-$ python -m venv venv
-
-# Activate virtual environment
-# On macOS/Linux:
-$ source venv/bin/activate
-# On Windows:
-$ venv\Scripts\activate
-
-# Install required Python packages (n/a currently)
-# $ pip install -r requirements-dev.txt
-```
-
-### 4. Configure databricks.yml Variables
+### 3. Configure databricks.yml Variables
 Update the variables in `databricks.yml` to match your environment. The dev target defaults to catalog `users` and a schema based on on the developer's name.
 
 - **catalog**: The catalog name where your tables will be created
@@ -102,7 +83,7 @@ Example configuration for prod target:
 ```yaml
 targets:
   prod:
-    mode: development
+    mode: production
     default: true
     workspace:
       host: https://your-workspace.cloud.databricks.com
